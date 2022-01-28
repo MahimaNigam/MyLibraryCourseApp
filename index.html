@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Course App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="header">
+        <h1>Course Library Application</h1>
+    </section>
+    <!-- input section start -->
+      <section class="inputs">
+          <div class="addCourse input-sec">
+              <h3>Add Course</h3>
+              <input type="text" placeholder="Course Name" id="courseName"><br>
+              <input type="number" placeholder="No. of Lectures" id="courseSize"><br>
+              <textarea name="Description" id="courseDescription" placeholder="Course Description"></textarea><br>
+              <button onclick="handler.addCourse()">Add Course</button>
+          </div>
+
+          <div class="changeCourseName input-sec">
+              <h3>Change Course Name</h3>
+              <input type="number" placeholder="position" id="position"><br>
+              <input type="text" placeholder="Course Name" id="courseTitle"><br>
+              <button onclick="handler.changeCourseName()">Change Course Name</button>
+          </div>
+
+          <div class="changeCourseSize input-sec">
+            <h3>Change Leacture Size</h3>
+            <input type="number" placeholder="position" id="position2"><br>
+            <input type="number" placeholder="No of Lectures" id="noOfLectures"><br>
+            <button onclick="handler.changeCourseSize()">Change Lecture Count</button>
+        </div>
+
+        <div class="changeCourseName input-sec">
+            <h3>Change Course Description</h3>
+            <input type="number" placeholder="position" id="position3"><br>
+            <textarea name="Description" id="Description" placeholder="Course Description"></textarea><br>
+            <button onclick="handler.changeCourseDescription()">Change Description</button><br>
+        </div>
+      </section>
+    <!-- input section end -->
+
+    <table id="table">
+        <thead>
+           <tr>
+               <th>Course Name</th>
+               <th>Course Size</th>
+               <th>Course Description</th>
+               <th>Delete Button</th>
+           </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script src="js/script.js"></script>
+</body>
+</html>

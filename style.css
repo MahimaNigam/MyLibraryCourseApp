@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.header{
+    background-color: #006;
+    color: #f0f0f0;
+    padding: 25px;
+}
+.header h1{
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    word-spacing: 2px;
+}
+.inputs{
+    display: flex;
+}
+.inputs .input-sec{
+    width: 25%;
+    /* text-align: center; */
+    border: 3px solid #006;
+    padding: 40px 22px;
+    margin: 30px 15px;
+    background-color: rgb(211, 205, 205);
+}
+.inputs .input-sec h3{
+    font-size: 16px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #006;
+    /* text-align: center; */
+}
+.inputs .input-sec input,textarea{
+    margin-bottom: 10px;
+    height: 25px;
+    width: 100%;
+}
+.inputs .input-sec textarea{
+    height: 70px;
+    width: 100%;
+}
+.inputs .input-sec button{
+    float: right;
+    /* margin-right: 25px; */
+    padding: 5px 20px;
+    background-color: #006;
+    color: #f0f0f0;
+    font-weight: bolder;
+}
+table{
+    margin-top: 2px;
+    width: 100%;
+    text-align: center;
+    background-color: #006;
+    color: #f0f0f0;
+}
+table th {
+border-bottom: 2px solid #f0f0f0;
+padding: 5px 10px;
+border: 2px solid #f0f0f0;
+}
+table tr{
+    border-bottom: 2px solid #f0f0f0;
+}
