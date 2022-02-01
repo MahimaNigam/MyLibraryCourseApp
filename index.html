@@ -17,6 +17,8 @@
               <h3>Add Course</h3>
               <input type="text" placeholder="Course Name" id="courseName"><br>
               <input type="number" placeholder="No. of Lectures" id="courseSize"><br>
+              <input type="text" placeholder="Trainer Name" id="courseTrainer"><br>
+              <input type="text" placeholder="Author Name" id="courseAuthor"><br>
               <textarea name="Description" id="courseDescription" placeholder="Course Description"></textarea><br>
               <button onclick="handler.addCourse()">Add Course</button>
           </div>
@@ -25,21 +27,21 @@
               <h3>Change Course Name</h3>
               <input type="number" placeholder="position" id="position"><br>
               <input type="text" placeholder="Course Name" id="courseTitle"><br>
-              <button onclick="handler.changeCourseName()">Change Course Name</button>
+              <button onclick="handler.changeCourseName()" class=btn>Change Course Name</button>
           </div>
 
           <div class="changeCourseSize input-sec">
-            <h3>Change Leacture Size</h3>
+            <h3>Change Lecture Size</h3>
             <input type="number" placeholder="position" id="position2"><br>
             <input type="number" placeholder="No of Lectures" id="noOfLectures"><br>
-            <button onclick="handler.changeCourseSize()">Change Lecture Count</button>
+            <button onclick="handler.changeCourseSize()" class=btn>Change Lecture Count</button>
         </div>
 
         <div class="changeCourseName input-sec">
             <h3>Change Course Description</h3>
             <input type="number" placeholder="position" id="position3"><br>
             <textarea name="Description" id="Description" placeholder="Course Description"></textarea><br>
-            <button onclick="handler.changeCourseDescription()">Change Description</button><br>
+            <button onclick="handler.changeCourseDescription()" id="btn-desc">Change Description</button><br>
         </div>
       </section>
     <!-- input section end -->
@@ -49,6 +51,8 @@
            <tr>
                <th>Course Name</th>
                <th>Course Size</th>
+               <th>Trainer Name</th>
+               <th>Author Name</th>
                <th>Course Description</th>
                <th>Delete Button</th>
            </tr>
