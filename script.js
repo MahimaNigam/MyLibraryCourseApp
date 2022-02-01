@@ -10,10 +10,12 @@ var courseList={
             }
         }
     },
-    addCourse:function(courseName, totalLectures, description){
+    addCourse:function(courseName, totalLectures, trainer, author, description){
         this.courses.push({
             courseTitle: courseName,
             courseSize: totalLectures,
+            courseTrainer: trainer,
+            courseAuthor:author,
             courseDescription: description
         });
         this.displayCources();
@@ -26,6 +28,14 @@ var courseList={
         this.courses[position].courseSize=totalLectures;
         this.displayCources();
     },
+    // changeCourseTrainer:function(position, trainer){
+    //     this.courses[position].courseTrainer=trainer;
+    //     this.displayCources();
+    // },
+    // changeCourseAuthor:function(position, author){
+    //     this.courses[position].courseAuthor=author;
+    //     this.displayCources();
+    // },
     changeCourseDescription:function(position, description){
         this.courses[position].courseDescription=description;
         this.displayCources();
@@ -42,12 +52,17 @@ var handler={
     addCourse:function(){
         var courseName=document.getElementById('courseName').value;
         var courseSize=document.getElementById('courseSize').value;
+        var courseTrainer=document.getElementById('courseTrainer').value;
+        var courseAuthor=document.getElementById('courseAuthor').value;
         var courseDescription=document.getElementById('courseDescription').value;
-        courseList.addCourse(courseName, courseSize, courseDescription);
+        courseList.addCourse(courseName, courseSize, courseTrainer, courseAuthor, courseDescription);
         view.displayCources();
-        courseName.value='';
-        courseSize.value='';
-        courseDescription.value='';
+        document.getElementById('courseName').value="";
+        document.getElementById('courseSize').value="";
+        document.getElementById('courseTrainer').value="";
+        document.getElementById('courseAuthor').value="";
+        document.getElementById('courseDescription').value='';
+
     },
 
     changeCourseName:function(){
@@ -55,8 +70,8 @@ var handler={
         var courseTitle=document.getElementById('courseTitle').value;
         courseList.changeCourseName(position,courseTitle)
         view.displayCources();
-        position.value='';
-        courseTitle.value='';
+        document.getElementById('position').value='';
+        document.getElementById('courseTitle').value='';
     },
 
     changeCourseSize:function(){
@@ -64,8 +79,8 @@ var handler={
         var noOfLectures=document.getElementById('noOfLectures').value;
         courseList.changeCourseSize(position2,noOfLectures)
         view.displayCources();
-        position2.value='';
-        noOfLectures.value='';
+        document.getElementById('position2').value='';
+        document.getElementById('noOfLectures').value='';
     },
 
     changeCourseDescription:function(){
@@ -73,8 +88,8 @@ var handler={
         var Description=document.getElementById('Description').value;
         courseList.changeCourseDescription(position3,Description)
         view.displayCources();
-        position3.value='';
-        Description.value='';
+        document.getElementById('position3').value='';
+        document.getElementById('Description').value='';
     },
 
     deleteCourse:function(position){
@@ -92,15 +107,22 @@ var view={
             var course= courseList.courses[i];
             var tdName=document.createElement('td');
             var tdSize=document.createElement('td');
+            var tdTrainer=document.createElement('td');
+            var tdAuthor=document.createElement('td');
             var tdDesc=document.createElement('td');
             var tdDelete=document.createElement('td');
+            var tdCopy=document.createElement('td')
             tdName.textContent=course.courseTitle;
             tdSize.textContent=course.courseSize;
+            tdTrainer.textContent=course.courseTrainer;
+            tdAuthor.textContent=course.courseAuthor;
             tdDesc.textContent=course.courseDescription;
             tdDelete.append(this.createDeleteButton());
             tdDelete.id=i;
             tr.appendChild(tdName);
             tr.appendChild(tdSize);
+            tr.appendChild(tdTrainer);
+            tr.appendChild(tdAuthor);
             tr.appendChild(tdDesc);
             tr.appendChild(tdDelete);
             tbody.appendChild(tr);
